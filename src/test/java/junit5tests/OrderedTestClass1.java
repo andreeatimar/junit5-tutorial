@@ -2,6 +2,7 @@ package junit5tests;
 
 import org.junit.jupiter.api.*;
 
+@TestMethodOrder(MethodOrderer.MethodName.class)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class OrderedTestClass1 {
 
@@ -35,4 +36,11 @@ public class OrderedTestClass1 {
     void secondMethod() {
         System.out.println("This is the second test method.");
     }
+
+    @Test
+    @DisplayName("A display name")
+    void thirdMethod() {
+        System.out.println("This is the third test method.");
+    }
+
 }
